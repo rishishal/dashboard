@@ -1,23 +1,16 @@
-"use client";
-
 import * as React from "react";
 import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
+  ChartNoAxesCombined,
+  Users,
+  PackageCheck,
+  LayoutDashboard,
+  Images,
 } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
-import { NavProjects } from "@/components/nav-projects";
+
 import { NavUser } from "@/components/nav-user";
-import { TeamSwitcher } from "@/components/team-switcher";
+import { MainLogo } from "@/components/main-logo";
 import {
   Sidebar,
   SidebarContent,
@@ -33,125 +26,71 @@ const data = {
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
-  teams: [
-    {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
-    },
-  ],
+
   navMain: [
     {
-      title: "Playground",
+      title: "Home Slides",
       url: "#",
-      icon: SquareTerminal,
+      icon: Images,
       isActive: true,
       items: [
         {
-          title: "History",
+          title: "Home Banners List",
           url: "#",
         },
         {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
+          title: "Add Home Banner Slide",
           url: "#",
         },
       ],
     },
     {
-      title: "Models",
+      title: "Users",
       url: "#",
-      icon: Bot,
+      icon: Users,
+    },
+    {
+      title: "Products",
+      url: "#",
+      icon: ChartNoAxesCombined,
       items: [
         {
-          title: "Genesis",
+          title: "Product List",
           url: "#",
         },
         {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
+          title: "Product Upload",
           url: "#",
         },
       ],
     },
     {
-      title: "Documentation",
+      title: "Category",
       url: "#",
-      icon: BookOpen,
+      icon: LayoutDashboard,
       items: [
         {
-          title: "Introduction",
+          title: "Category List",
           url: "#",
         },
         {
-          title: "Get Started",
+          title: "Add Category",
           url: "#",
         },
         {
-          title: "Tutorials",
+          title: "Sub category List",
           url: "#",
         },
         {
-          title: "Changelog",
+          title: "Add Sub Category",
           url: "#",
         },
       ],
     },
     {
-      title: "Settings",
+      title: "Orders",
       url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
-    },
-  ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
+      icon: PackageCheck,
     },
   ],
 };
@@ -160,11 +99,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+        <MainLogo />
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+        <NavMain data={data.navMain} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
