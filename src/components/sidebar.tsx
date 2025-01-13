@@ -29,67 +29,61 @@ const data = {
 
   navMain: [
     {
-      title: "Home Slides",
-      url: "#",
-      icon: Images,
+      title: "Products",
+      icon: ChartNoAxesCombined,
       isActive: true,
       items: [
         {
-          title: "Home Banners List",
-          url: "#",
-        },
-        {
-          title: "Add Home Banner Slide",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Users",
-      url: "#",
-      icon: Users,
-    },
-    {
-      title: "Products",
-      url: "#",
-      icon: ChartNoAxesCombined,
-      items: [
-        {
           title: "Product List",
-          url: "#",
+          url: "/dashboard/products/list",
         },
         {
           title: "Product Upload",
-          url: "#",
+          url: "/dashboard/product/upload",
         },
       ],
     },
     {
       title: "Category",
-      url: "#",
       icon: LayoutDashboard,
       items: [
         {
           title: "Category List",
-          url: "#",
+          url: "/dashboard/category/list",
         },
         {
           title: "Add Category",
-          url: "#",
+          url: "/dashboard/category/add",
         },
         {
-          title: "Sub category List",
-          url: "#",
+          title: "Sub Category List",
+          url: "/dashboard/category/sub-category-list",
         },
         {
           title: "Add Sub Category",
-          url: "#",
+          url: "/dashboard/category/sub-category-add",
         },
       ],
     },
     {
+      title: "Banner Slides",
+      icon: Images,
+      items: [
+        {
+          title: "Home Banners List",
+          url: "/dashboard/banner-silder",
+        },
+      ],
+    },
+    {
+      title: "Users",
+      url: "/dashboard/users",
+      icon: Users,
+    },
+
+    {
       title: "Orders",
-      url: "#",
+      url: "/dashboard/orders",
       icon: PackageCheck,
     },
   ],
