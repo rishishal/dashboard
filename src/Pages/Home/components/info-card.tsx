@@ -1,8 +1,21 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, ChartPie, Landmark } from "lucide-react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { MdOutlineShoppingBag } from "react-icons/md";
 
 export function InfoCards() {
+  const cardArray = [
+    {
+      icon: AiOutlineShoppingCart,
+      name: "sales",
+      value: "3,456",
+      DynamicValue: "0.43",
+    },
+    { icon: ChartPie, value: "57,890", DynamicValue: "-4.40" },
+    { icon: Landmark, value: "12,390", DynamicValue: "+32.40" },
+    { icon: MdOutlineShoppingBag, value: "3.456K", DynamicValue: "0.43" },
+  ];
+
   return (
     <Card className="w-72">
       <CardContent className="p-4 space-y-4">
