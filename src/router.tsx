@@ -1,6 +1,5 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 // import LoginPage from "@/pages/LoginPage";
-
 // import RegisterPage from "./pages/RegisterPage";
 import DashboardLayout from "@/layout/DashboardLayout";
 import BanneSlider from "./Pages/banner-slider";
@@ -13,6 +12,7 @@ import { AddCategoryList } from "./Pages/categories/add-categoryList";
 import { CategoryList } from "./Pages/categories/category-list";
 import SubCategoryAdd from "./Pages/categories/sub-category/sub-categoryAdd";
 import SubCategoryList from "./Pages/categories/sub-category/sub-categoryList";
+import DasboardHome from "./Pages/Home";
 // import AuthLayout from "./layouts/AuthLayout";
 
 const router = createBrowserRouter([
@@ -24,6 +24,10 @@ const router = createBrowserRouter([
     path: "dashboard",
     element: <DashboardLayout />,
     children: [
+      {
+        path: "/dashboard/home",
+        element: <DasboardHome />,
+      },
       {
         path: "/dashboard/banner-silder",
         element: <BanneSlider />,
