@@ -1,5 +1,5 @@
 import { ColumnDef } from "@tanstack/react-table";
-import { RecentOrderProps } from "@/interface/index";
+import { ProductDataProps } from "@/interface/index";
 
 import { MoreHorizontal } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -12,7 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export const columns: ColumnDef<RecentOrderProps>[] = [
+export const columns: ColumnDef<ProductDataProps>[] = [
   {
     id: "select",
     header: ({ table }) => (

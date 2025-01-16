@@ -1,6 +1,6 @@
-import { RecentOrderProps } from "@/interface/index";
+import { ProductDataProps } from "@/interface/index";
 
-export const RecentOrder: RecentOrderProps[] = [
+export const ProductData: ProductDataProps[] = [
   {
     order_id: "a1b2c3d4",
     product_name: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",

@@ -1,7 +1,8 @@
+import { Card } from "@/components/ui/card";
 import { InfoCards } from "./components/info-card";
 import { columns } from "./components/Product Table/columns";
 import { DataTable } from "./components/Product Table/DataTable";
-import { RecentOrder } from "./orderDataDb";
+import { ProductData } from "./orderDataDb";
 
 const DasboardHome = () => {
   return (
@@ -10,10 +11,15 @@ const DasboardHome = () => {
         <InfoCards />
       </div>
 
-      <div className="space-y-4">
+      <Card className="space-y-4 p-4">
         <h2 className="font-bold text-2xl text-primary/85">Products</h2>
-        <DataTable data={RecentOrder} columns={columns} />
-      </div>
+        <DataTable data={ProductData} columns={columns} />
+      </Card>
+
+      <Card className="space-y-4 p-4">
+        <h2 className="font-bold text-2xl text-primary/85">Recent Order</h2>
+        {/* <DataTable data={RecentOrder} columns={columns} /> */}
+      </Card>
     </div>
   );
 };

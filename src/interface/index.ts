@@ -1,4 +1,4 @@
-export type RecentOrderProps = {
+export type ProductDataProps = {
   order_id: string;
   amount: number;
   order_items: number;
