@@ -10,3 +10,8 @@ export type RecentOrderProps = {
   status: "shipped" | "delivered" | "returned" | "cancelled";
   email: string;
 };
+
+export interface PaginationType {
+  pageIndex: number;
+  pageSize: number;
+}

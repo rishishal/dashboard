@@ -1,10 +1,5 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { RecentOrderProps } from "@/interface/index";
-import { FaCheck, FaInbox } from "react-icons/fa";
-import { RxCrossCircled } from "react-icons/rx";
-import { PiKeyReturnDuotone } from "react-icons/pi";
-import { ReactNode } from "react";
-import { IoMdInformationCircleOutline } from "react-icons/io";
 
 import { MoreHorizontal } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -40,93 +35,34 @@ export const columns: ColumnDef<RecentOrderProps>[] = [
     enableSorting: false,
     enableHiding: false,
   },
-
-  {
-    accessorKey: "order_id",
-    header: "order_ID",
-  },
   {
     accessorKey: "product_name",
-    header: "Name",
+    header: "Product",
     cell: ({ row }) => {
+      const Image = row.original.image;
       const name = row.original.product_name;
-      return <span className="text-clip">{name}</span>;
-    },
-  },
-  {
-    accessorKey: "order_items",
-    header: "Items",
-  },
-
-  {
-    accessorKey: "date",
-    header: "Date",
-    cell: ({ getValue }) => {
-      const date = getValue<Date>();
       return (
-        <span>
-          {date.toLocaleDateString("en-IN", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
-        </span>
+        <div className="flex gap-2">
+          <img src={Image} alt={name} className="w-10 h-11" />
+          <div className="w-48">
+            <p className="line-clamp-2 font-semibold text-primary/60">{name}</p>
+          </div>
+        </div>
       );
     },
   },
   {
-    accessorKey: "status",
-    header: "Status",
-    cell: ({ row }) => {
-      const status = row.original.status;
-      let colorClass;
-      let icon: ReactNode;
-
-      //Apply color and icon based on status
-
-      switch (status) {
-        case "delivered":
-          colorClass = "text-green-500 bg-green-100";
-          icon = <FaCheck className="text-xs" />;
-          break;
-        case "shipped":
-          colorClass = "text-yellow-500 bg-yellow-100";
-          icon = <IoMdInformationCircleOutline className="text-xs" />;
-          break;
-        case "cancelled":
-          colorClass = "text-red-500 bg-red-100";
-          icon = <RxCrossCircled />;
-          break;
-        case "returned":
-          colorClass = "text-blue-500 bg-blue-100";
-          icon = <PiKeyReturnDuotone />;
-          break;
-        default:
-          colorClass = "text-gray-600 bg-gray-200";
-          icon = <FaInbox />;
-      }
-      return (
-        <span
-          className={`px-3 py-0.5 rounded-full font-medium flex items-center gap-1 w-fit ${colorClass}`}
-        >
-          {icon}
-          <span className="text-xs">{status}</span>
-        </span>
-      );
-    },
+    accessorKey: "category",
+    header: "CATEGORY",
   },
   {
     accessorKey: "amount",
-    header: "Amount",
-  },
-  {
-    accessorKey: "email",
-    header: "Email",
+    header: "Price",
   },
   {
     id: "actions",
     header: "Action",
-    cell: ({ row }) => {
+    cell: () => {
       // const payment = row.original;
 
       return (

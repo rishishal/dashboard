@@ -11,7 +11,7 @@ const DasboardHome = () => {
       </div>
 
       <div className="space-y-4">
-        <h2 className="font-bold text-2xl text-primary/85">Recent Order</h2>
+        <h2 className="font-bold text-2xl text-primary/85">Products</h2>
         <DataTable data={RecentOrder} columns={columns} />
       </div>
     </div>
