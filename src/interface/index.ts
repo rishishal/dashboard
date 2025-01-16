@@ -3,7 +3,10 @@ export type RecentOrderProps = {
   amount: number;
   order_items: number;
   product_name: string;
+  category: string;
+  phone: string;
   date: Date;
+  image: string;
   status: "shipped" | "delivered" | "returned" | "cancelled";
   email: string;
 };
