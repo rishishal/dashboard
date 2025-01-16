@@ -1,6 +1,6 @@
 import { InfoCards } from "./components/info-card";
-import { columns } from "./components/RecentTable/columns";
-import { DataTable } from "./components/RecentTable/DataTable";
+import { columns } from "./components/Product Table/columns";
+import { DataTable } from "./components/Product Table/DataTable";
 import { RecentOrder } from "./orderDataDb";
 
 const DasboardHome = () => {
