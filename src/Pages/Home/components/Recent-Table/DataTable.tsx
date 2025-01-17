@@ -21,7 +21,7 @@ interface DataTableProps<TData, TValue> {
   data: TData[];
 }
 
-export function DataTable<TData, TValue>({
+export function RecentDataTable<TData, TValue>({
   columns,
   data,
 }: DataTableProps<TData, TValue>) {
@@ -33,7 +33,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <div className="rounded-md border">
-      <Table>
+      <Table containerClassname="overflow-x-scroll">
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>

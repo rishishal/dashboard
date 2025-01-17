@@ -20,6 +20,7 @@ export type RecentDataProps = {
   order_id: string;
   payment_id: string;
   name: string;
+  phone: number;
   address: string;
   pin_code: string;
   total_amount: number;
@@ -27,6 +28,7 @@ export type RecentDataProps = {
   user_id: string;
   status: "shipped" | "delivered" | "returned" | "cancelled";
   date: Date;
+  orderProduct: OrderProductProps;
 };
 
 export type OrderProductProps = {

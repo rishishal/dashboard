@@ -31,7 +31,7 @@ export const ProductData: ProductDataProps[] = [
     order_items: 1,
     product_name: "Mens Cotton Jacket",
     date: new Date("2024-10-21"),
-    amount: 120,
+    amount: 950,
     status: "cancelled",
     category: "men's clothing",
     phone: "8899562237",
