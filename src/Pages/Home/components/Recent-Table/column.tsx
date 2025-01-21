@@ -5,7 +5,7 @@ export const Ordercolumns: ColumnDef<RecentDataProps>[] = [
   {
     accessorKey: "order_id",
     header: "ORDER ID",
-    size: 570,
+    size: 100,
   },
   {
     accessorKey: "payment_id",

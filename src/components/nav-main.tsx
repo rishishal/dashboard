@@ -37,7 +37,7 @@ export function NavMain({
     <SidebarGroup>
       <SidebarGroupLabel>Dashboard</SidebarGroupLabel>
       <SidebarMenu>
-        {data.map((item) =>
+        {data.map((item, index) =>
           item.items ? (
             <Collapsible
               key={item.title}
@@ -69,7 +69,7 @@ export function NavMain({
               </SidebarMenuItem>
             </Collapsible>
           ) : (
-            <SidebarMenuItem>
+            <SidebarMenuItem key={index}>
               <SidebarMenuButton tooltip={item.title}>
                 {item.icon && <item.icon />}
                 <Link to={item?.url || ""}>
