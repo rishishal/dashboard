@@ -37,7 +37,7 @@ export function RecentDataTable<TData, TValue>({
 
   return (
     // Container with max width and border
-    <div className="max-w-[1500px] rounded-md border">
+    <div className="container rounded-md border">
       {/* Scroll container */}
       <div className="w-full overflow-auto">
         {/* Table container with minimum width */}

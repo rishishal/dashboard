@@ -8,7 +8,7 @@ import { RecentData } from "./recentData";
 import { RecentDataTable } from "./components/Recent-Table/DataTable";
 const DasboardHome = () => {
   return (
-    <div className="flex flex-col gap-10  p-6">
+    <div className="flex flex-col gap-10 p-4">
       <div className="flex justify-start gap-6">
         <InfoCards />
       </div>
