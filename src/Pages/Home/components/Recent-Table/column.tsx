@@ -4,82 +4,52 @@ import { RecentDataProps } from "@/interface/index";
 export const Ordercolumns: ColumnDef<RecentDataProps>[] = [
   {
     accessorKey: "order_id",
-    header: () => (
-      <div className="w-32">
-        <span>ORDER ID</span>
-      </div>
-    ),
+    header: "ORDER ID",
+    size: 570,
   },
   {
     accessorKey: "payment_id",
-    header: () => (
-      <div className="w-24">
-        <span>PAYMENT ID</span>
-      </div>
-    ),
+    header: "PAYMENT ID",
+    size: 270,
   },
   {
     accessorKey: "name",
-    header: () => (
-      <div className="w-32">
-        <span>NAME</span>
-      </div>
-    ),
+    header: "NAME",
+    size: 270,
   },
   {
     accessorKey: "phone",
-    header: () => (
-      <div className="w-32">
-        <span>PHONE NUMBER</span>
-      </div>
-    ),
+    header: "PHONE NUMBER",
+    size: 270,
   },
   {
     accessorKey: "address",
-    header: () => (
-      <div className="w-44">
-        <span>ADDRESS</span>
-      </div>
-    ),
+    header: "ADDRESS",
+    size: 270,
   },
   {
     accessorKey: "pin_code",
-    header: () => (
-      <div className="w-32">
-        <span>PIN CODE</span>
-      </div>
-    ),
+    header: "PIN CODE",
+    size: 270,
   },
   {
     accessorKey: "total_amount",
-    header: () => (
-      <div className="w-32">
-        <span>TOTAL AMOUNT</span>
-      </div>
-    ),
+    header: "TOTAL AMOUNT",
+    size: 270,
   },
   {
     accessorKey: "email",
-    header: () => (
-      <div className="w-32">
-        <span>USER ID</span>
-      </div>
-    ),
+    header: "USER ID",
+    size: 270,
   },
   {
     accessorKey: "status",
-    header: () => (
-      <div className="w-32">
-        <span>ORDER STATUS</span>
-      </div>
-    ),
+    header: "ORDER STATUS",
+    size: 270,
   },
   {
     accessorKey: "date",
-    header: () => (
-      <div className="w-32">
-        <span>DATE</span>
-      </div>
-    ),
+    header: "DATE",
+    size: 270,
   },
 ];
