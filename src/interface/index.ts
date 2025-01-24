@@ -28,14 +28,7 @@ export type RecentDataProps = {
   user_id: string;
   status: "shipped" | "delivered" | "returned" | "cancelled";
   date: Date;
-  orderProduct: OrderProductProps;
-};
-
-export type OrderProductProps = {
-  product_id: string;
-  product_title: string;
-  image: string;
+  payment_status: string;
   quantity: number;
-  price: number;
-  sub_total: number;
+  delivery_number: string;
 };
