@@ -15,6 +15,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { PaymentSheet } from "@/components/payment-Sheet";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -26,7 +27,7 @@ export function RecentDataTable<TData, TValue>({
   data,
 }: DataTableProps<TData, TValue>) {
   const [columnResizeMode] = React.useState<ColumnResizeMode>("onChange");
-
+  const [open, setOpen] = React.useState(false);
   const table = useReactTable({
     data,
     columns,
@@ -62,6 +63,7 @@ export function RecentDataTable<TData, TValue>({
               <TableRow
                 key={row.id}
                 data-state={row.getIsSelected() && "selected"}
+                onClick={() => setOpen(true)}
               >
                 {row.getVisibleCells().map((cell) => (
                   <TableCell key={cell.id}>
@@ -79,6 +81,7 @@ export function RecentDataTable<TData, TValue>({
           )}
         </TableBody>
       </Table>
+      <PaymentSheet data={data} open={open} setOpen={setOpen} />
     </div>
   );
 }

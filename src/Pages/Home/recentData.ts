@@ -21,7 +21,7 @@ export const RecentData: RecentDataProps[] = [
   {
     order_id: "#a1b2c459",
     payment_id: "849524548",
-    name: "Rishi kumar",.
+    name: "Rishi kumar",
     phone: 8899562237,
     address:
       "Fourth Floor, Panchsheel Vihar, Sheikh Sarai, New Delhi-110017., Delhi, Delhi 110017",
