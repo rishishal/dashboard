@@ -9,7 +9,6 @@ import {
   SheetFooter,
   SheetHeader,
   SheetTitle,
-  SheetTrigger,
 } from "@/components/ui/sheet";
 
 export function PaymentSheet({
@@ -21,10 +20,6 @@ export function PaymentSheet({
   open: boolean;
   setOpen: (open: boolean) => void;
 }) {
-  const handleClick = () => {
-    setOpen(!open);
-  };
-
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetContent>
@@ -50,9 +45,7 @@ export function PaymentSheet({
         </div>
         <SheetFooter>
           <SheetClose asChild>
-            <Button type="submit" onClick={handleClick}>
-              Save changes
-            </Button>
+            <Button type="submit">Save changes</Button>
           </SheetClose>
         </SheetFooter>
       </SheetContent>
