@@ -26,7 +26,7 @@ import { Input } from "@/components/ui/input";
 
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { PaginationSelection } from "../pagination-selection";
+import { PaginationSelection } from "./pagination-selection";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
