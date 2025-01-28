@@ -81,7 +81,7 @@ export function RecentDataTable<TData, TValue>({
           )}
         </TableBody>
       </Table>
-      <PaymentSheet data={data} open={open} setOpen={setOpen} />
+      <PaymentSheet open={open} setOpen={setOpen} />
     </div>
   );
 }

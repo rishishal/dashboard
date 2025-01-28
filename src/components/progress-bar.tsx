@@ -3,12 +3,17 @@ import { Separator } from "@/components/ui/separator";
 
 export function ProgressBar() {
   const steps = [
-    "The order is placed",
-    "The order is packed",
+    "The Invoice is created",
+    "The Invoice sent to the customer",
     "The order is shipped",
     "The order is delivered",
   ];
-  const completedDates = ["April 23, 2023", "April 24, 2023", "April 25, 2023"];
+  const completedDates = [
+    "April 23, 2023",
+    "April 24, 2023",
+    "April 25, 2023",
+    "April 26, 2023",
+  ];
   const currentStep = 2;
 
   // Calculate the width of the progress bar based on the current step
@@ -16,20 +21,13 @@ export function ProgressBar() {
 
   return (
     <div className="relative flex items-center justify-between">
-      <Separator orientation="vertical" className="h-80 w-2 rounded-md" />
+      <Separator orientation="vertical" className="h-64 w-2 rounded-md" />
       <Separator
         orientation="vertical"
         className="absolute top-0 w-2 rounded-md bg-green-500"
-        style={{ height: `calc(${progressWidth}% - 20px)` }}
+        style={{ height: `calc(${progressWidth}% - 28px)` }}
       />
-
-      {/* <div className="relative w-full h-2 bg-gray-200 rounded-md">
-        <div
-          className="absolute h-full bg-green-500 rounded-md"
-          style={{ width: `${progressWidth}%` }}
-        />
-      </div> */}
-      <div className="absolute flex flex-col top-0 -left-2 gap-20 rounded-full">
+      <div className="absolute flex flex-col top-0 -left-2 gap-14 rounded-full">
         {steps.map((step, index) => {
           const isCompleted = index < currentStep;
           return (
@@ -50,7 +48,11 @@ export function ProgressBar() {
           );
         })}
       </div>
-      {/* <CircleCheck className="absolute text-green-500 top-0 -left-2 bg-white" /> */}
+      <div className="flex flex-col gap-16 mt-1">
+        {completedDates.map((date) => (
+          <span className="text-xs text-gray-500">{date}</span>
+        ))}
+      </div>
     </div>
   );
 }
