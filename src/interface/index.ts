@@ -1,5 +1,5 @@
 export type ProductDataProps = {
-  order_id: string;
+  product_id: string;
   amount: number;
   order_items: number;
   product_name: string;
@@ -7,8 +7,9 @@ export type ProductDataProps = {
   phone: string;
   date: Date;
   image: string;
-  status: "shipped" | "delivered" | "returned" | "cancelled";
+  status: "published" | "draftlist" | "stockout" | "inactive";
   email: string;
+  stock: number;
 };
 
 export interface PaginationType {
@@ -20,6 +21,8 @@ export type RecentDataProps = {
   order_id: string;
   payment_id: string;
   name: string;
+  product_name: string;
+  image: string;
   phone: number;
   address: string;
   pin_code: string;

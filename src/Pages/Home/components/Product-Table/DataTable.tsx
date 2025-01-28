@@ -2,8 +2,10 @@
 
 import {
   ColumnDef,
+  ColumnFiltersState,
   flexRender,
   getCoreRowModel,
+  getFilteredRowModel,
   getPaginationRowModel,
   useReactTable,
 } from "@tanstack/react-table";
@@ -20,6 +22,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { BiFirstPage, BiLastPage } from "react-icons/bi";
+import { Input } from "@/components/ui/input";
 
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -35,6 +38,7 @@ export function DataTable<TData, TValue>({
   data,
 }: DataTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = useState({});
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [pagination, setPagination] = useState<PaginationType>({
     pageIndex: 0,
     pageSize: 8,
@@ -47,8 +51,11 @@ export function DataTable<TData, TValue>({
     getPaginationRowModel: getPaginationRowModel(),
     onPaginationChange: setPagination,
     onRowSelectionChange: setRowSelection,
+    onColumnFiltersChange: setColumnFilters,
+    getFilteredRowModel: getFilteredRowModel(),
     state: {
       pagination,
+      columnFilters,
       rowSelection,
     },
   });
@@ -56,6 +63,21 @@ export function DataTable<TData, TValue>({
   return (
     <div>
       <div className="rounded-md border">
+        <div className="flex items-center p-4">
+          <Input
+            placeholder="Search Product Name"
+            value={
+              (table.getColumn("product_name")?.getFilterValue() as string) ??
+              ""
+            }
+            onChange={(event) =>
+              table
+                .getColumn("product_name")
+                ?.setFilterValue(event.target.value)
+            }
+            className="max-w-sm"
+          />
+        </div>
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (

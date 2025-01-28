@@ -17,6 +17,9 @@ export const RecentData: RecentDataProps[] = [
     payment_status: "unpaid",
     quantity: 2,
     delivery_number: "DV02515412RF",
+    product_name: "Mens Casual Premium Slim Fit T-Shirts",
+    image:
+      "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
   },
   {
     order_id: "#a1b2c459",
@@ -34,6 +37,9 @@ export const RecentData: RecentDataProps[] = [
     payment_status: "paid",
     quantity: 2,
     delivery_number: "DV02515872RF",
+    product_name: "Mens Casual Premium Slim Fit T-Shirts",
+    image:
+      "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
   },
   {
     order_id: "#a1b2c892",
@@ -51,5 +57,7 @@ export const RecentData: RecentDataProps[] = [
     payment_status: "unpaid",
     quantity: 2,
     delivery_number: "DV025158982RF",
+    product_name: "Mens Cotton Jacket",
+    image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
   },
 ];

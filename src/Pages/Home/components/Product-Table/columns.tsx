@@ -11,6 +11,13 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export const columns: ColumnDef<ProductDataProps>[] = [
   {
@@ -37,7 +44,7 @@ export const columns: ColumnDef<ProductDataProps>[] = [
   },
   {
     accessorKey: "product_name",
-    header: "Product",
+    header: "Product Name",
     cell: ({ row }) => {
       const Image = row.original.image;
       const name = row.original.product_name;
@@ -53,11 +60,59 @@ export const columns: ColumnDef<ProductDataProps>[] = [
   },
   {
     accessorKey: "category",
-    header: "CATEGORY",
+    header: "Category",
+    cell: ({ row }) => {
+      const category = row.original.category;
+      return <span className="text-primary/60 capitalize">{category}</span>;
+    },
+  },
+  {
+    accessorKey: "stock",
+    header: "Stock",
   },
   {
     accessorKey: "amount",
     header: "Price",
+  },
+  {
+    accessorKey: "status",
+    header: "Status",
+    cell: ({ row }) => {
+      const status = row.original.status;
+      let colorClass;
+
+      switch (status) {
+        case "stockout":
+          colorClass = "text-yellow-500 bg-yellow-100 border border-yellow-500";
+          break;
+        case "published":
+          colorClass = "text-green-500 bg-green-100 border border-green-500";
+          break;
+        case "inactive":
+          colorClass = "text-red-500 bg-red-100 border border-red-500";
+          break;
+        case "draftlist":
+          colorClass = "text-gray-500 bg-gray-100 border border-gray-500";
+          break;
+        default:
+          colorClass = "";
+      }
+      return (
+        <Select>
+          <SelectTrigger
+            className={`px-3 py-0.5 text-xs rounded-full font-medium flex items-center gap-1 w-fit capitalize border-none ${colorClass}`}
+          >
+            <SelectValue placeholder={status} />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="published">Published</SelectItem>
+            <SelectItem value="stockout">Stockout</SelectItem>
+            <SelectItem value="inactive">Inactive</SelectItem>
+            <SelectItem value="draftlist">Draftlist</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+    },
   },
   {
     id: "actions",
