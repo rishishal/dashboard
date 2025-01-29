@@ -4,7 +4,6 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import DashboardLayout from "@/layout/DashboardLayout";
 import BanneSlider from "./Pages/banner-slider";
 import ProductList from "./Pages/products/product-list";
-import ProductUpload from "./Pages/products/product-upload";
 import Order from "./Pages/orders";
 import Users from "./Pages/users";
 
@@ -35,10 +34,6 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/products/list",
         element: <ProductList />,
-      },
-      {
-        path: "/dashboard/product/upload",
-        element: <ProductUpload />,
       },
 
       {

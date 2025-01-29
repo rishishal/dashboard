@@ -37,10 +37,6 @@ const data = {
           title: "Product List",
           url: "/dashboard/products/list",
         },
-        {
-          title: "Product Upload",
-          url: "/dashboard/product/upload",
-        },
       ],
     },
     {
