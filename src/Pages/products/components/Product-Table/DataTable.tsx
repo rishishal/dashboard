@@ -25,8 +25,11 @@ import { BiFirstPage, BiLastPage } from "react-icons/bi";
 import { Input } from "@/components/ui/input";
 
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PaginationSelection } from "./pagination-selection";
+import { StatusDropDown } from "../StatusDropDown";
+import { CategoriesDropDown } from "../CategoryDropdown";
+import { FilterArea } from "../filter-area";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -39,10 +42,40 @@ export function DataTable<TData, TValue>({
 }: DataTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = useState({});
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+
+  const [selectedStatuses, setSelectedStatuses] = useState<string[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+
   const [pagination, setPagination] = useState<PaginationType>({
     pageIndex: 0,
     pageSize: 8,
   });
+
+  useEffect(() => {
+    setColumnFilters((prev) => {
+      const baseFilters = prev.filter(
+        (filter) => filter.id !== "status" && filter.id !== "category"
+      );
+
+      const newFilters = [...baseFilters];
+
+      if (selectedStatuses.length > 0) {
+        newFilters.push({
+          id: "status",
+          value: selectedStatuses,
+        });
+      }
+
+      if (selectedCategories.length > 0) {
+        newFilters.push({
+          id: "category",
+          value: selectedCategories,
+        });
+      }
+      console.log("New Colum Filters:", newFilters);
+      return newFilters;
+    });
+  }, [selectedStatuses, selectedCategories]);
 
   const table = useReactTable({
     data,
@@ -63,7 +96,7 @@ export function DataTable<TData, TValue>({
   return (
     <div>
       <div className="rounded-md border">
-        <div className="flex items-center p-4">
+        <div className="flex items-center justify-between p-4">
           <Input
             placeholder="Search Product Name"
             value={
@@ -77,7 +110,23 @@ export function DataTable<TData, TValue>({
             }
             className="max-w-sm"
           />
+          <div className="flex items-center gap-4">
+            <StatusDropDown
+              selectedStatuses={selectedStatuses}
+              setSelectedStatuses={setSelectedStatuses}
+            />
+            <CategoriesDropDown
+              selectedCategories={selectedCategories}
+              setSelectedCategories={setSelectedCategories}
+            />
+          </div>
         </div>
+        <FilterArea
+          selectedStatuses={selectedStatuses}
+          setSelectedStatuses={setSelectedStatuses}
+          selectedCategories={selectedCategories}
+          setSelectedCategories={setSelectedCategories}
+        />
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
