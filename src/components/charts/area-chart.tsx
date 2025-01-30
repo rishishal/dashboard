@@ -35,7 +35,7 @@ const chartConfig = {
 
 export function SalesChart() {
   return (
-    <Card>
+    <Card className="flex-1">
       <CardHeader>
         <CardTitle>Area Chart - Linear</CardTitle>
         <CardDescription>
