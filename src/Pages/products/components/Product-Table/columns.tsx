@@ -71,10 +71,10 @@ export const columns: ColumnDef<ProductDataProps>[] = [
     header: "Stock",
   },
   {
-    accessorKey: "amount",
+    accessorKey: "price",
     header: "Price",
     cell: ({ row }) => {
-      const price = row.original.amount;
+      const price = row.original.price;
       return <span>₹{price}</span>;
     },
   },

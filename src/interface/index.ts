@@ -1,14 +1,11 @@
 export type ProductDataProps = {
   product_id: string;
-  amount: number;
-  order_items: number;
   product_name: string;
   category: string;
-  phone: string;
   date: Date;
   image: string;
   status: "published" | "draftlist" | "stockout" | "inactive";
-  email: string;
+  price: number;
   stock: number;
 };
 
