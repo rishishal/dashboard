@@ -31,13 +31,8 @@ const data = {
     {
       title: "Products",
       icon: ChartNoAxesCombined,
+      url: "/dashboard/products",
       isActive: true,
-      items: [
-        {
-          title: "Product List",
-          url: "/dashboard/products/list",
-        },
-      ],
     },
     {
       title: "Category",

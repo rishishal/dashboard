@@ -12,6 +12,7 @@ import { CategoryList } from "./Pages/categories/category-list";
 import SubCategoryAdd from "./Pages/categories/sub-category/sub-categoryAdd";
 import SubCategoryList from "./Pages/categories/sub-category/sub-categoryList";
 import DasboardHome from "./Pages/Home";
+import ProductUpload from "./Pages/products/product_upload";
 // import AuthLayout from "./layouts/AuthLayout";
 
 const router = createBrowserRouter([
@@ -32,10 +33,13 @@ const router = createBrowserRouter([
         element: <BanneSlider />,
       },
       {
-        path: "/dashboard/products/list",
+        path: "/dashboard/products",
         element: <ProductList />,
       },
-
+      {
+        path: "/dashboard/products/upload",
+        element: <ProductUpload />,
+      },
       {
         path: "/dashboard/category/list",
         element: <CategoryList />,

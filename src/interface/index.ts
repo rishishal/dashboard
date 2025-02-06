@@ -7,6 +7,8 @@ export type ProductDataProps = {
   status: "published" | "draftlist" | "stockout" | "inactive";
   price: number;
   stock: number;
+  size: string;
+  description: string;
 };
 
 export interface PaginationType {

@@ -72,7 +72,7 @@ export function PaymentSheet({
             <h2 className="text-sm">Items</h2>
             <div className="flex flex-col gap-4">
               {ProductData.slice(0, 3).map((items: ProductDataProps) => (
-                <div key={items.order_id} className="flex justify-between">
+                <div key={items.product_id} className="flex justify-between">
                   <div className="flex gap-4">
                     <img
                       src={items.image}
@@ -89,7 +89,7 @@ export function PaymentSheet({
                       </span>
                     </div>
                   </div>
-                  <span className="text-sm font-semibold">₹{items.amount}</span>
+                  <span className="text-sm font-semibold">₹{items.price}</span>
                 </div>
               ))}
             </div>
