@@ -21,6 +21,8 @@ import { SizeSelector } from "./components/form-components/SizeSelector";
 import { GenderRadio } from "./components/form-components/GenderRadio";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import { SelectCategory } from "./components/form-components/select-category";
+import { ProductCategory } from "./components/product-category";
 
 const ProductUpload = () => {
   const [imageURL, SetImageURL] = useState<string | null>(null);
@@ -98,10 +100,10 @@ const ProductUpload = () => {
 
   return (
     <div className="p-8">
-      <div className="flex justify-between">
-        <div className="flex gap-4">
+      <div className="flex justify-between mb-4">
+        <div className="flex gap-4 items-center">
           <LayoutList />
-          <span>Add New Product</span>
+          <span className="text-2xl font-bold">Add New Product</span>
         </div>
         <div className="space-x-4">
           <Button variant="outline" className="px-6 py-5 rounded-full text-sm">
@@ -240,44 +242,52 @@ const ProductUpload = () => {
             </div>
           </div>
 
-          <div className="flex-1 mb-4">
-            <FileUploader
-              name="file"
-              handleChange={(file: any) => {
-                handleFileUpload(file);
-              }}
-              types={["JPG", "JPEG", "PNG", "WEBP"]}
-            >
-              <div
-                className={cn(
-                  "flex h-[400px] cursor-pointer flex-col items-center justify-center space-y-2 rounded-2xl border-2 border-dashed border-gray-300 px-7 transition-all hover:border-primary",
-                  imageURL && "h-24 sm:h-40 "
-                )}
+          <div className="flex-1 flex flex-col gap-14">
+            <div>
+              <h3 className="text-base font-semibold mb-4">Upload Img</h3>
+              <FileUploader
+                name="file"
+                handleChange={(file: any) => {
+                  handleFileUpload(file);
+                }}
+                types={["JPG", "JPEG", "PNG", "WEBP"]}
               >
-                {imageURL ? (
-                  <img
-                    src={imageURL}
-                    alt="image"
-                    className="h-24 w-full rounded-md object-contain sm:h-40"
-                  />
-                ) : (
-                  <div className="flex h-24 w-full flex-col items-center justify-center sm:h-40">
-                    <div className="flex flex-col items-center justify-center text-sm lg:text-base">
-                      <Upload className="size-6 text-gray-400" />
+                <div
+                  className={cn(
+                    "flex h-[400px] cursor-pointer flex-col items-center justify-center space-y-2 rounded-2xl border-2 border-dashed border-gray-300 px-7 transition-all hover:border-primary",
+                    imageURL && "h-24 sm:h-40 "
+                  )}
+                >
+                  {imageURL ? (
+                    <img
+                      src={imageURL}
+                      alt="image"
+                      className="h-24 w-full rounded-md object-contain sm:h-40"
+                    />
+                  ) : (
+                    <div className="flex h-24 w-full flex-col items-center justify-center sm:h-40">
+                      <div className="flex flex-col items-center justify-center text-sm lg:text-base">
+                        <Upload className="size-6 text-gray-400" />
+                        <p className="font-normal text-gray-400">
+                          Drag and drop your image here
+                        </p>
+                      </div>
                       <p className="font-normal text-gray-400">
-                        Drag and drop your image here
+                        or click to browse
+                      </p>
+                      <p className="text-xs font-normal text-gray-400 lg:text-sm">
+                        [JPG, JPEG, PNG, WEBP]
                       </p>
                     </div>
-                    <p className="font-normal text-gray-400">
-                      or click to browse
-                    </p>
-                    <p className="text-xs font-normal text-gray-400 lg:text-sm">
-                      [JPG, JPEG, PNG, WEBP]
-                    </p>
-                  </div>
-                )}
-              </div>
-            </FileUploader>
+                  )}
+                </div>
+              </FileUploader>
+            </div>
+
+            <div className="space-y-12">
+              <SelectCategory />
+              <ProductCategory />
+            </div>
           </div>
         </form>
       </Form>
