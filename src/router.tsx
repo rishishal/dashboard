@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 // import LoginPage from "@/pages/LoginPage";
 // import RegisterPage from "./pages/RegisterPage";
 import DashboardLayout from "@/layout/DashboardLayout";
@@ -18,50 +18,46 @@ import ProductUpload from "./Pages/products/product_upload";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/dashboard/home" />,
-  },
-  {
-    path: "dashboard",
     element: <DashboardLayout />,
     children: [
       {
-        path: "/dashboard/home",
+        path: "",
         element: <DasboardHome />,
       },
       {
-        path: "/dashboard/banner-silder",
+        path: "/banner-silder",
         element: <BanneSlider />,
       },
       {
-        path: "/dashboard/products",
+        path: "/products",
         element: <ProductList />,
       },
       {
-        path: "/dashboard/products/upload",
+        path: "/products/upload",
         element: <ProductUpload />,
       },
       {
-        path: "/dashboard/category/list",
+        path: "/category/list",
         element: <CategoryList />,
       },
       {
-        path: "/dashboard/category/add",
+        path: "/category/add",
         element: <AddCategoryList />,
       },
       {
-        path: "/dashboard/category/sub-category-list",
+        path: "/category/sub-category-list",
         element: <SubCategoryList />,
       },
       {
-        path: "/dashboard/category/sub-category-add",
+        path: "/category/sub-category-add",
         element: <SubCategoryAdd />,
       },
       {
-        path: "/dashboard/users",
+        path: "/users",
         element: <Users />,
       },
       {
-        path: "/dashboard/orders",
+        path: "/orders",
         element: <Order />,
       },
     ],

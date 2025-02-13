@@ -72,7 +72,7 @@ export function DataTable<TData, TValue>({
           value: selectedCategories,
         });
       }
-      console.log("New Colum Filters:", newFilters);
+
       return newFilters;
     });
   }, [selectedStatuses, selectedCategories]);

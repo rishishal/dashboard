@@ -1,15 +1,15 @@
 "use client";
 
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbSeparator,
 } from "./ui/breadcrumb";
 
 import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 export function NavHeader() {
   const [pathSegments, setPathSegments] = useState<string[]>([]);
@@ -28,26 +28,28 @@ export function NavHeader() {
   return (
     <Breadcrumb>
       <BreadcrumbList>
-        {pathSegments.map((segment, index) => {
-          const href = "/" + pathSegments.slice(0, index + 1).join("/");
-          const isLast = index === pathSegments.length - 1;
+        <BreadcrumbItem>
+          <Link to="/">Dashboard</Link>
+          <BreadcrumbSeparator className="hidden md:inline-block" />
 
-          return (
-            <BreadcrumbItem key={href}>
-              <BreadcrumbLink
-                href={isLast ? undefined : href}
-                className={`capitalize cursor-pointer ${
-                  isLast ? "text-gray-500" : ""
-                }`}
+          {pathSegments.map((segment, index) => {
+            const href = "/" + pathSegments.slice(0, index + 1).join("/");
+            const isLast = index === pathSegments.length - 1;
+
+            return (
+              <Link
+                key={href}
+                to={href}
+                className={cn(
+                  "capitalize cursor-pointer font-semibold",
+                  isLast && "text-black"
+                )}
               >
                 {segment.replace(/-/g, " ")}
-              </BreadcrumbLink>
-              {!isLast && (
-                <BreadcrumbSeparator className="hidden md:inline-block" />
-              )}
-            </BreadcrumbItem>
-          );
-        })}
+              </Link>
+            );
+          })}
+        </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
   );

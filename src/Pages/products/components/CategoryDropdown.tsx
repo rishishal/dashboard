@@ -77,8 +77,6 @@ export function CategoriesDropDown({
 }: CategoriesDropDownProps) {
   const [open, setOpen] = useState(false);
 
-  console.log("Selected categories:", selectedCategories);
-
   function handleCheckboxChange(value: string) {
     console.log("Handling change for category:", value);
 

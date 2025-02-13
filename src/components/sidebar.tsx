@@ -31,7 +31,7 @@ const data = {
     {
       title: "Products",
       icon: ChartNoAxesCombined,
-      url: "/dashboard/products",
+      url: "/products",
       isActive: true,
     },
     {
@@ -40,19 +40,19 @@ const data = {
       items: [
         {
           title: "Category List",
-          url: "/dashboard/category/list",
+          url: "/category/list",
         },
         {
           title: "Add Category",
-          url: "/dashboard/category/add",
+          url: "/category/add",
         },
         {
           title: "Sub Category List",
-          url: "/dashboard/category/sub-category-list",
+          url: "/category/sub-category-list",
         },
         {
           title: "Add Sub Category",
-          url: "/dashboard/category/sub-category-add",
+          url: "/category/sub-category-add",
         },
       ],
     },
@@ -62,19 +62,19 @@ const data = {
       items: [
         {
           title: "Home Banners List",
-          url: "/dashboard/banner-silder",
+          url: "/banner-silder",
         },
       ],
     },
     {
       title: "Users",
-      url: "/dashboard/users",
+      url: "/users",
       icon: Users,
     },
 
     {
       title: "Orders",
-      url: "/dashboard/orders",
+      url: "/orders",
       icon: PackageCheck,
     },
   ],
