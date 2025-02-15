@@ -34,3 +34,9 @@ export type RecentDataProps = {
   quantity: number;
   delivery_number: string;
 };
+
+export type BannerDataProps = {
+  bannerImage: string;
+  Active: boolean;
+  url: string;
+};

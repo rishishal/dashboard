@@ -31,7 +31,6 @@ export function NavHeader() {
         <BreadcrumbItem>
           <Link to="/">Dashboard</Link>
           <BreadcrumbSeparator className="hidden md:inline-block" />
-
           {pathSegments.map((segment, index) => {
             const href = "/" + pathSegments.slice(0, index + 1).join("/");
             const isLast = index === pathSegments.length - 1;
