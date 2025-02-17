@@ -37,6 +37,6 @@ export type RecentDataProps = {
 
 export type BannerDataProps = {
   bannerImage: string;
-  Active: boolean;
+  active: boolean;
   url: string;
 };

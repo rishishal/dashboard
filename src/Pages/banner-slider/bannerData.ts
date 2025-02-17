@@ -5,17 +5,17 @@ import BannerImg3 from "@/assets/bannerImage/bannner-img3.webp";
 export const BannnerData = [
   {
     bannerImage: BannerImg1,
-    Active: true,
+    active: true,
     url: "",
   },
   {
     bannerImage: BannerImg2,
-    Active: true,
+    active: true,
     url: "",
   },
   {
     bannerImage: BannerImg3,
-    Active: true,
+    active: true,
     url: "",
   },
 ];
