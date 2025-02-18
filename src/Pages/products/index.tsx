@@ -10,7 +10,7 @@ const ProductList = () => {
     <div className="py-10 space-y-4">
       <div className="flex justify-between">
         <h2 className="font-bold text-2xl text-primary/85">Products List</h2>
-        <Link to="/dashboard/products/upload">
+        <Link to="/products/product-upload">
           <Button>+ Add Product</Button>
         </Link>
       </div>

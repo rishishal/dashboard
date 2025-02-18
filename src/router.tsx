@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 // import RegisterPage from "./pages/RegisterPage";
 import DashboardLayout from "@/layout/DashboardLayout";
 import BanneSlider from "./Pages/banner-slider";
-import ProductList from "./Pages/products/product-list";
+import ProductList from "./Pages/products";
 import Order from "./Pages/orders";
 import Users from "./Pages/users";
 
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         element: <ProductList />,
       },
       {
-        path: "/products/upload",
+        path: "products/product-upload",
         element: <ProductUpload />,
       },
       {

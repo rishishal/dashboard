@@ -2,6 +2,8 @@ import { BannerDataProps } from "@/interface";
 import { ColumnDef } from "@tanstack/react-table";
 import { BannnerTableAction } from "./bannner-table-action";
 import { ActiveSwitch } from "./active-switch";
+import { Eye } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
 
 export type Payment = {
   id: string;
@@ -12,8 +14,26 @@ export type Payment = {
 
 export const Bannercolumns: ColumnDef<BannerDataProps>[] = [
   {
-    accessorKey: "select",
-    header: "Select",
+    id: "select",
+    header: ({ table }) => (
+      <Checkbox
+        checked={
+          table.getIsAllPageRowsSelected() ||
+          (table.getIsSomePageRowsSelected() && "indeterminate")
+        }
+        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+        aria-label="Select all"
+      />
+    ),
+    cell: ({ row }) => (
+      <Checkbox
+        checked={row.getIsSelected()}
+        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        aria-label="Select row"
+      />
+    ),
+    enableSorting: false,
+    enableHiding: false,
   },
   {
     accessorKey: "bannerImage",
@@ -29,6 +49,13 @@ export const Bannercolumns: ColumnDef<BannerDataProps>[] = [
           />
         </div>
       );
+    },
+  },
+  {
+    accessorKey: "view",
+    header: "View",
+    cell: () => {
+      return <Eye className="size-5 cursor-pointer" />;
     },
   },
   {

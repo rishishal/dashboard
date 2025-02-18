@@ -40,11 +40,14 @@ export function NavHeader() {
                 key={href}
                 to={href}
                 className={cn(
-                  "capitalize cursor-pointer font-semibold",
+                  "capitalize cursor-pointer font-semibold flex items-center gap-1",
                   isLast && "text-black"
                 )}
               >
-                {segment.replace(/-/g, " ")}
+                <span>{segment.replace(/-/g, " ")}</span>
+                {!isLast && (
+                  <BreadcrumbSeparator className="hidden md:inline-block" />
+                )}
               </Link>
             );
           })}
